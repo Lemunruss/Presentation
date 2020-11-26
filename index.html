@@ -1,0 +1,428 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Typescript</title>
+
+		<link rel="stylesheet" href="other/reset.css">
+		<link rel="stylesheet" href="other/reveal.css">
+		<link rel="stylesheet" href="other/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    </head>
+    <body>  
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                        <h1>Typescript Presentation for RSS</h1>
+                        <h3>Made by: Igor Melnikov</h3>
+                        <p> Hello. In this presentation, we will look at a programming language such as TypeScript.</p>
+                     
+                </section>
+                <section>
+                    <h1>Summary of the presentation:</h1>
+                    <ul>
+                        <li>What is Typescript. Short story</li>
+                        <li>Basic language features. Differences from Javascript</li>
+                        <li>Advantages of using Typescript. When should you use TypeScript</li>
+                        <li>Creation and behavior of primitive data types</li>
+                        <li>Arrays creation and behavior</li>
+                        <li>Objects creation and behavior</li>
+                        <li>Special types (any, never, void)</li>
+                        <li>Creating your own types</li>
+                        <li>Additional topics and language options for your own study</li>
+                        <li>Conclusion</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                    <h2>What is Typescript. Short story</h2>
+                    <h3>What is Typescript?</h3>
+                    <p>
+                        TypeScript is an extended version of JavaScript with the main purpose of making it easier to develop large JS applications.
+                    </p>
+                        TypeScript is a JavaScript extension that gives the user the ability to work with static typing and robust tooling. Using it 
+                        will avoid many of the annoying bugs that JavaScript developers often encounter. TypeScript reports errors even before 
+                        you save the file and allows you to write code much faster. This gives the developer time to think and test the really
+                        important things. This language adds many new principles - classes, generics, interfaces, static types.
+                    <p>
+                        TypeScript code is compiled into JS and is suitable for developing any projects for any browsers - especially since you 
+                        can choose the JS version into which the code will be compiled.
+                        TypeScript is an open source project, so it is developing very quickly. Much that appears in TS will later migrate to JavaScript:
+                        let and const, arrow functions, and so on, for example.
+                    </p>
+                    </section>
+                    <section>
+                        <h3>Short story</h3>
+                    <p>
+                        TypeScript arose out of supposed JavaScript flaws in large-scale applications at both Microsoft and other JavaScript users.
+                        Problems with the development of complex programs in JavaScript led to the need to facilitate the development of language components.
+                    </p>
+                    <p>
+                        The TypeScript developers were looking for a solution that would not break compatibility with the standard and its
+                        cross-platform support.
+                    </p>    
+                   
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Basic language features</h2>
+                        <p>
+                        1. TypeScript code is converted to Plain JavaScript. <br>
+                        TypeScript code is not understandable to browsers. This is why, if the code is written in TypeScript,
+                        then it compiles and transforms the code, i.e. translates the code to JavaScript. 
+                        The above process is called Trans-piled. With JavaScript code, browsers can read the code and display.
+                        </p>  
+                        <p class="fragment">
+                            2. JavaScript is TypeScript - any code written in JavaScript can be converted to TypeScript 
+                            by changing the extension from .js to .ts.
+                        </p>  
+                        <p class="fragment">
+                            3. Use TypeScript anywhere: TypeScript code can run in any browser, on any device, or on any operating system.
+                            TypeScipt is not specific to any virtual machine, etc.
+                        </p>  
+                        <p class="fragment">
+                            4. TypeScript supports JS libraries: With TypeScript, developers can use existing JavaScript code,
+                            include popular JavaScript libraries, and can be called from other JavaScript code.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Differences from Javascript</h2>
+                        <p>1. Typescript is known as an object oriented programming language whereas JavaScript is a scripting language.</p>
+                        <p class="fragment">2. TypeScript has a feature known as static typing, but JavaScript doesn't.</p>
+                        <p class="fragment">3. TypeScript supports modules, while JavaScript does not support modules.</p>
+                        <p class="fragment">4. TypeScript has an interface, but JavaScript has no interface.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Pros of using Typescript</h2>
+                    <p>
+                        1. TypeScript always indicates compilation errors only at design time. This makes it much less likely to get errors at run time,
+                        whereas JavaScript is an interpreted language.
+                    </p>
+                    <p class="fragment">
+                        2. TypeScript has a feature that is strongly typed or statically typed. This means that static typing allows compile-time 
+                        type validation. This is not available in JavaScript.
+                    </p>
+                    <p class="fragment">
+                        3. The presence of all the new features in JS that you have heard about, but cannot yet use due to poor browser support.
+                    </p>
+                    <p class="fragment">
+                        4. Angular is written in it, and if you want to take full advantage of this framework, then you want to use TypeScript.
+                    </p>
+                    </section>
+                    <section>
+                        <h2>When should you use TypeScript?</h2>
+                        <p>
+                            1. In the case of a large application. TypeScript is great if your application has a large architecture and a lot of code,
+                            and especially if there are several developers working on this application.
+                        </p>
+                        <p>
+                            2. In case you and your team are familiar with statically typed programming languages. The team should look towards
+                            TypeScript when they want to develop an application in JavaScript and are already familiar with Java or C #, which are
+                            statically typed languages.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Data types in Typescript</h2>
+                    <p>
+                        TypeScript provides the following base types:
+                    </p>
+                    <ul>
+                        <li>Number</li>
+                        <li>String</li>
+                        <li>Boolean: boolean true or false</li>
+                        <li>Null и undefined</li>
+                        <li>Array</li>
+                        <li>Tuple</li>
+                        <li>Any: arbitrary type</li>
+                        <li>Void: no specific value, used primarily as the return type of functions</li>
+                        <li>Never: also represents no value and is used as the return type of functions that generate or return an error</li>
+                        <li>Enum: enumeration</li>                             
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                    <h2>Creation and behavior of primitive data types</h2>
+                    <p>Let's take a look at the syntax of the language while working with its main feature - strong data typing.</p>
+                    <h3>Assigning types</h3>
+                    <p>The main way to assign a type to a variable is to write it after the name of the variable using the symbol :</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let num: number = 42; //decimal numbers
+let num: number = 0.222; //floating point numbers
+let hex: number = 0xbeef; //hexadecimal numbers
+let bin: number = 0b0010; //binary numbers
+                    </code></pre>
+                    </section>
+                    <section>
+                        <p>Like other languages, TypeScript uses the String type to store text information:</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let str: string = 'Hello World!';              
+let multiStr: string = `Two-line
+variable`;
+let expression = 'New expression';
+let expressionStr: string = `Expression 
+str: ${ expression }`;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p>Where without one of the main data types:</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            let boolFalse: boolean = false;
+                            let boolTrue: boolean = true;
+                        </code></pre>
+                        <p>And here we can see assigning of null and undefined:</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            let nothing: null = null;
+                            let boolTrue: boolean = true;
+                        </code></pre>
+                        <p>
+                            But in fact, we can assign undefined and null values to variables of other types, for example, number:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            let x: number = undefined;
+                            x = null;
+                            x = 5;
+                        </code></pre>
+                        <p>In this regard, null and undefined act as subtypes of other types and are useful mainly in some operations where the result 
+                        is unknown - whether it will be a number or a string, or it will be null. In this case, to avoid a possible error,
+                         we can check the value for undefined or null, just like in javascript.
+                        </p>
+                        <p>This  of assigning is valid for all data types.</p>
+                    </section> 
+                    <section>
+                        <h2>Assigning of arrays</h2>
+                        <p>
+                            Arrays are defined using the [] expression and are also strongly typed. That is, if the array initially contains strings, 
+                            then in the future it will only be able to work with strings.
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            let list: number[] = [10, 20, 30];
+                            let colors: string[] = ["red", "green", "blue"];
+                            console.log(list[0]);
+                            console.log(colors[1]);
+                        </code></pre>
+                        <p>
+                            As in JavaScript, you can use indexes to access array elements.
+                        </p>
+                        <p>
+                            An alternative way to define arrays is to use the Array <> type:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let names:Array<string>=["Tom", "Bob", "Alice"];
+console.log(names[1]);  // Bob
+                        </code></pre>
+                    </section> 
+                    <section>
+                        <h2>Tuples assigning</h2>
+                        <p>
+                            Tuples, like arrays, represent a set of elements for which the type is already known in advance. For instance:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+// tuple definition - a tuple consists of
+ two elements - a string and a number
+let userInfo: [string, number];
+// initialize the tuple
+userInfo = ["Tom", 28];
+// Incorrect initialization - passed values 
+do not match types by position
+// userInfo = [28, "Tom"]; // Mistake
+    
+// using a tuple
+console.log (userInfo [1]); // 28
+userInfo [1] = 37;
+                        </code></pre>
+                    </section>  
+                    <section>
+                        <h2>Enum assigning</h2>
+                        <p>
+                            The enum type is designed to describe a set of numeric data using string constants. 
+                            So, let's declare the following enumeration:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            enum Season { Winter, Spring, Summer, Autumn };
+                        </code></pre>
+                        <p>
+                            The enumeration is called Season and has four elements. Now we use enumeration:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+enum Season { Winter, Spring, Summer, Autumn };
+let current: Season = Season.Summer;
+console.log(current);
+current = Season.Autumn; // change of value
+                        </code></pre>
+                        <p>
+                            This creates a variable called current, which is of type Season. In this case, the console will display the number 2. 
+                            Since all enumeration elements represent numeric values. The defaults are as follows:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+enum Season {Winter=0,Spring=1,Summer=2,Autumn=3};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Object assigning</h2>
+                        <p>In addition to simple variables, just like in javascript, you can create complex objects. For instance:</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let person = {name:"Tom", age:23};
+console.log(person.name);
+// alternative way to get a property
+console.log(person["name"]);
+                        </code></pre>
+                        <p>
+                            But despite the fact that this is actually the same object that we could use in JavaScript, due to the strict typing of TS,
+                            we have limitations in this case. In particular, if we have the following code:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let person = { name: "Tom", age: 23 };
+person = { name: "Alice" };
+                        </code></pre>
+                        <p>
+                            Then we get an error on the second line, because the compiler after the first line assumes that the person object will
+                            have two properties name and age. There must be correspondence in names, quantity and type of properties.
+                        </p>
+                    </section>
+                    <section>
+                    <h2>Any assigning</h2>
+                    <p>
+                        Any describes data, the type of which may not be known at the time of writing the application.
+                    </p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+let someVar: any = "hello";
+console.log(someVar); // now someVar is string
+someVar = 20; 
+console.log(someVar);// now someVar - is number
+                    </code></pre>
+                </section>
+                    <section>
+                        <h2>Void assigning</h2>
+                        <p>Typically this type is used to prohibit returning a value from a function. To be precise, it tells the compiler that there 
+                            shouldn't be any type here. A good example would be a function that prints something to console.log:</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+function warn(message: string): void {
+    console.warn(message);
+}
+                        </code></pre>
+                        <p>
+                            But many people forget that by default TypeScript considers null and undefined as subtypes, so void does not prevent
+                            functions from returning them. However, you can ask the compiler to treat these subtypes as separate types. 
+                            In this case, void will prevent null from being returned, but not undefined. The example below does not throw
+                            a compilation error:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            function pitfall(): void {
+                                return;
+                            }
+                        </code></pre>
+                        <p>
+                            You can also use this type when declaring variables, but in this case they will not do you any good, 
+                            because you can only write null and undefined in them, but only if they are subtypes.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Never assigning</h2>
+                        <p>
+                            The Never type indicates that a function can under no circumstances return anything from itself, for example, 
+                            it always throws an error or includes an infinite loop that cannot return anything from the function. 
+                            This type is a subtype and can be assigned to any type, but not vice versa.
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            function fail(message: string): never {
+                                throw new Error(message);
+                            }
+                        </code></pre>
+                        <p>
+                            It's important to understand the difference between never and void here, because it can be confusing at first.
+                            A function that returns nothing is void, but as we saw above, it can return undefined. 
+                            A function that never returns anything is never; you can think of never as a way of not using the return keyword in 
+                            a function.
+                        </p>
+                    </section>    
+                    <section>
+                        <h2>Alias</h2>
+                        <p>
+                            TypeScript has the ability to create your own types, called aliases. A custom type is created using the type keyword.
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+type Human = {firstName:string,age:number,height:number}
+                        </code></pre>
+                        <p>
+                            The example above creates a custom Human type containing 3 different properties. An example of creating an object of type Human:
+                        </p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+const human:Human = {firstName:'Franz',age:32,height:185}
+                        </code></pre>
+                    </section>   
+                </section>
+                <section>
+                    <h2>Variable multitype</h2>
+                    <p>A variable can be assigned several types by listing them using the | operator</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        let multitypeVar: string | number = 'String';
+                        multitypeVar = 20;
+                    </code></pre>
+                    <p>
+                    In the code above, the variable is assigned two types: string and numeric.
+                    Now you can assign both text data and numeric data to a variable.
+                    </p>
+                </section>
+                <section>
+                    <h2>Additional topics and language options for your own study</h2>
+                    <ul>
+                        <li class="fragment">Guards</li>
+                        <li class="fragment">Defining types for function parameters</li>
+                        <li class="fragment">Optional properties</li>
+                        <li class="fragment">Default values</li>
+                        <li class="fragment">Read-only properties</li>
+                        <li class="fragment">Barrel</li>
+                        <li class="fragment">Generic</li>
+                        <li class="fragment">Interface</li>
+                        <li class="fragment">Classes</li>
+                        <li class="fragment">Abstract classes</li>
+                        <li class="fragment">Access modifiers</li>
+                        <li class="fragment">Additional operators</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Conclusion</h2>
+                    <p>
+                        In this presentation, I tried to tell you what TypeScript is, to solve what problems it was created to solve,
+                        and examined the basic syntax for defining data types. However, you may wonder if there is a legitimate need for TypeScript,
+                        because dynamic typing is always more attractive than static typing. That is why I will leave here a list of articles 
+                        that will allow you to look at TypeScript from a different angle.
+                    </p>
+                    <ul>
+                        <li><a href="https://canonium.com/articles/typescript-introduction">TypeScript: An Introduction</a></li>
+                        <li><a href="https://metanit.com/web/typescript/1.1.php">A series of articles on the capabilities of TypeScript</a></li>
+                        <li><a href="https://habr.com/ru/post/258957/">TypeScript: general impressions</a></li>
+                        <li><a href="https://habr.com/ru/company/piter/blog/320064/">Angular 2: why TypeScript?</a></li>
+                        <li><a href="https://habr.com/ru/post/272055/">Thoughts aloud about TypeScript</a></li>
+                        <li><a href="https://habr.com/ru/post/326304/">Why use static types in JavaScript? (Example of static typing in Flow)</a></li>
+                        <li><a href="https://slack.engineering/typescript-at-slack/">TypeScript at Slack</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/when-should-i-use-typescript-311cb5fe801b/">When should I use TypeScript?</a></li>
+                    </ul>
+                    <p><strong>Thanks for attention!</strong></p>
+                </section>        
+            </div>
+        </div>
+
+    <script src="other/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>  
+        Reveal.initialize(            
+            {  
+            hash: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            controls: true,  
+            progress: true,  
+            history: true,  
+            center: true,  
+        });  
+    </script>
+    </body>
+</html>
